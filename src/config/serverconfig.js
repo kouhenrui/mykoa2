@@ -9,6 +9,7 @@ const serverconfig = {
         secret: '0#rJo&T3HxlF@DOl',
         replay: 5 * 60 * 1000, //重放攻击有效时间
     },
+    casbinurl:"mongodb://192.168.245.22:27017/casbin",
     knex: {
         client: 'mysql2',
         connection: {
