@@ -1,6 +1,8 @@
 import { authloginService } from "../service/authService";
 import { generateCaptcha } from '../util/captcha'
+import { randomath } from "../util/crypt";
 import { errorResponse } from "../util/response";
+import { sendEmail } from "../util/smtp";
 export const authlogin = async (ctx) => {
     let { body } = ctx.request
     console.log(body)
@@ -52,5 +54,18 @@ export const handleWechatCallback = async (ctx) => {
     } catch (error) {
         ctx.status = 500;
         ctx.body = errorResponse('Failed to authenticate with WeChat', 500);
+    }
+}
+
+export const test=async(ctx)=>{
+    try {
+        let t=await randomath()
+        // const {email}=ctx.request.body
+        // let subject="123"
+        // let text="verify email"
+        // const result=await sendEmail(email,subject,text)
+        ctx.body=t
+    } catch (error) {
+        throw errorResponse(error.message)
     }
 }

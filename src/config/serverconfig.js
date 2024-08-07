@@ -9,6 +9,15 @@ const serverconfig = {
         secret: '0#rJo&T3HxlF@DOl',
         replay: 5 * 60 * 1000, //重放攻击有效时间
     },
+    smtp:{
+        host: 'smtp.dreamhost.com', // 你的 SMTP 服务地址
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+          user: 'appaccount@dataworkers.com', // 你的邮箱地址
+          pass: '1ApAc4545!!$' // 你的邮箱密码
+        }
+    },
     casbinurl:"mongodb://192.168.245.22:27017/casbin",
     knex: {
         client: 'mysql2',
